@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  font-family: "Poppins", sans-serif;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background: #191919;
+  background: radial-gradient(circle, rgba(55,136,5,0.8) 1%, rgba(3,3,3,1) 100%);
+  min-height: 100vh;
+}
+/* Barcha scroll barlarni berkitish */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+/* Webkit asosidagi brauzerlarda (Chrome, Safari) scroll barlarni yashirish */
+*::-webkit-scrollbar {
+  display: none; /* Webkit uchun */
+}
+
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+
+a:hover {
+  color: white;
+  outline: none;
+}
+
+/* Matn tanlanmasligi */
+* {
+  user-select: none;
+}
+
+/* Rasmlarni ko'chirib bo'lmasligi */
+img {
+  pointer-events: none;
+}
+
+
+
+/* Fokuslanganida fon o'zgarishini o'chirish */
+button:focus, a:focus, div:focus, img:focus, *:focus {
+  outline: none;
+}
+
+/* Disable tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Disable any active/focused styling */
+*:active, *:focus {
+  outline: none;
+  /*background-color: transparent; !* Ensures no background color change *!*/
+}
+
+
+
+.ratingIndex{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  width: 100vw;
+  flex-direction: column;
+  position: relative;
+}
+.rating_content{
+  width: 100%;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  overflow-y: scroll;
+  height: 100vh;
+}
+.rating_tabs{
+  width: 100%;
+
+
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 20px );
+
+  border-radius: 20px;
+  margin-top: 16%;
+  margin-bottom: 4%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.rating_tabs_item{
+  padding: 20px 20px;
+  border-radius: 20px;
+  width: 100px;
+  font-weight: 600;
+  text-align: center;
+  background: rgba( 55, 136, 5, 0.55 );
+  border: 1px solid rgba( 55, 136, 5, 0.55 );
+  /*border: 1px solid #39FF14;*/
+  /*box-shadow: 0 0 100px 0 rgba( 57, 255, 20, 0.47 );*/
+  /*background: rgba( 55, 136, 5, 0.55 );*/
+  /*backdrop-filter: blur( 10px );*/
+  /*-webkit-backdrop-filter: blur( 20px );*/
+}
+.rating_tabs_item.active{
+  border: 1px solid #39FF14;
+  box-shadow: 0 0 100px 0 rgba( 57, 255, 20, 0.47 );
+  background: rgba( 55, 136, 5, 0.55 );
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 20px );
+}
+
+@media screen and (orientation: landscape){
+  body, html{
+    display: none;
+  }
+}

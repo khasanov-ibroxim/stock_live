@@ -1,0 +1,160 @@
+.collapse-container-event {
+    overflow: hidden;
+    width: 95vw;
+}
+.collapse-container-event {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.collapse-item-event {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+
+.collapse-content-event {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.collapse-item-event{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.collapse-header-event:focus , .collapse-header-event {
+    outline: none;
+}
+.collapse-header-event {
+    width: 100%;
+    /*height: 50px;*/
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.collapse-icon-event{
+    font-size: 14px;
+    color: white;
+}
+
+.collapse-item-event.open .collapse-content-event {
+    padding: 10px 15px;
+    background: rgba( 55, 136, 5, 0.55 );
+    box-shadow: 0 0 100px 0 rgba( 57, 255, 20, 0.27 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 20px );
+    border: 1px solid #39FF14;
+    color: white;
+    overflow: hidden;
+    max-height: 0; /* Boshlang'ich balandlik 0 */
+    transition: max-height 0.5s ease; /* Animatsiya */
+    width: 100%;
+}
+.collapse-item-event .collapse-content-event{
+    display: none !important;
+}
+    /* Collapse ochiq bo'lganda */
+.collapse-item-event.open .collapse-content-event {
+    max-height: 500px; /* Maksimal balandlikni tahminiy qiymat belgilang */
+    width: 85%;
+    display: block !important;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+}
+.collapse-item-event.open .collapse-header-event , .collapse-item-event.open .events_item{
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.collapse-header-event .events_item{
+    margin: 0 !important;
+}
+ .collapse-item-event:last-child{
+    margin-bottom: 100px !important;
+}
+
+ .event_collapse_box{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+ }
+.img_event_collapse{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img_event_collapse img{
+    width: 80px;
+    height: 80px;
+}
+.text_event_collapse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.text_event_collapse h1{
+    margin-bottom: 0;
+    font-size: 20px;
+}
+.text_event_collapse p{
+    margin: 0;
+}
+.text_event_collapse span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.text_event_collapse img{
+    width: 13px;
+    height: 13px;
+}
+
+.collapse-item-event.open .events_item{
+    background: rgba( 55, 136, 5, 0.55 );
+    box-shadow: 0 0 100px 0 rgba( 57, 255, 20, 0.27 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 20px );
+    border: 1px solid #39FF14;
+}
+
+.event_collapse_box button{
+    cursor: pointer;
+    width: 90%;
+    height: 60px;
+
+    color: white;
+    background: rgba( 55, 136, 5, 0.55 );
+    box-shadow: 0 0 100px 0 rgba( 57, 255, 20, 0.27 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 20px );
+    border: 1px solid #39FF14;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    font-size: 25px;
+    margin-top: 35px;
+}

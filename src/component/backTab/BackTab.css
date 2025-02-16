@@ -1,0 +1,23 @@
+.back-tab a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.back-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background: rgba( 55, 136, 5, 0.55 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+color: white;
+}
+.back-tab p{
+    font-size: 20px;
+}
