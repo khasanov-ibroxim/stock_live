@@ -7,8 +7,7 @@ import liga from "../../assets/icons/kobek.webp";
 import {useTranslation} from "react-i18next";
 import {Tour} from "antd";
 
-
-const   AppBarFootball = () => {
+const AppBarFootball = () => {
     const { user_id,language } = useParams();
     const {t} = useTranslation();
     const location = useLocation();
