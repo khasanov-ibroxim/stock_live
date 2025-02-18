@@ -27,7 +27,20 @@ jobs:
           npm install
           npm run build
 
-      - name: 📂 Sync files
+      - name: 📂 Upload .env file via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
+          username: ${{ secrets.GIT_CPANEL_REACT_USER }}
+          password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
+          protocol: ${{ secrets.GIT_CPANEL_REACT_PROTOCOL }}
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/node_modules/**
+            **/dist/**
+
+      - name: 📂 Sync dist files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
