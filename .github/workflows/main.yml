@@ -17,6 +17,11 @@ jobs:
         with:
           node-version: '21.5.0'
 
+      - name: 🔑 Create .env file
+        run: |
+          echo "API_KEY=${{ secrets.API_KEY }}" > .env
+          echo "ANOTHER_SECRET=${{ secrets.ANOTHER_SECRET }}" >> .env
+
       - name: 🔨 Build Project
         run: |
           npm install
