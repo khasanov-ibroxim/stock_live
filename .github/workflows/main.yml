@@ -17,27 +17,12 @@ jobs:
         with:
           node-version: '21.5.0'
 
-      - name: 🔑 Create .env file
-        run: |
-          echo "API_KEY=${{ secrets.API_KEY }}" > .env
-          echo "ANOTHER_SECRET=${{ secrets.ANOTHER_SECRET }}" >> .env
-
-      - name: 📂 Upload only .env file via FTP
-        uses: sebastianpopp/ftp-action@v1
-        with:
-          host: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
-          user: ${{ secrets.GIT_CPANEL_REACT_USER }}
-          password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
-          localDir: ./
-          remoteDir: /path/to/your/server/
-          include: ".env"
-
       - name: 🔨 Build Project
         run: |
           npm install
           npm run build
 
-      - name: 📂 Sync dist files
+      - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
