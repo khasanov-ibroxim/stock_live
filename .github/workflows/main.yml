@@ -22,23 +22,20 @@ jobs:
           echo "API_KEY=${{ secrets.API_KEY }}" > .env
           echo "ANOTHER_SECRET=${{ secrets.ANOTHER_SECRET }}" >> .env
 
+      - name: 📂 Upload only .env file via FTP
+        uses: sebastianpopp/ftp-action@v1
+        with:
+          host: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
+          user: ${{ secrets.GIT_CPANEL_REACT_USER }}
+          password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
+          localDir: ./
+          remoteDir: /path/to/your/server/
+          include: ".env"
+
       - name: 🔨 Build Project
         run: |
           npm install
           npm run build
-
-      - name: 📂 Upload .env file via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
-          username: ${{ secrets.GIT_CPANEL_REACT_USER }}
-          password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
-          protocol: ${{ secrets.GIT_CPANEL_REACT_PROTOCOL }}
-          local-dir: ./
-          exclude: |
-            **/.git*
-            **/node_modules/**
-            **/dist/**
 
       - name: 📂 Sync dist files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
